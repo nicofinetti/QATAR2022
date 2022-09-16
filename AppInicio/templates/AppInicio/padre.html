@@ -29,10 +29,10 @@
                     Juega
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Mis Predicciones</a></li>
-                    <li><a class="dropdown-item" href="#">Mi Mundial</a></li>
+                    <li><a class="dropdown-item" href="{% url 'mispredicciones' %}">Mis Predicciones</a></li>
+                    <li><a class="dropdown-item" href="{% url 'mimundial' %}">Mi Mundial</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Mi Equipo</a></li>
+                    <li><a class="dropdown-item" href="{% url 'miequipo' %}">Mi Equipo</a></li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -40,12 +40,12 @@
                     Explora
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Grupos</a></li>
-                    <li><a class="dropdown-item" href="#">Estadios</a></li>
-                    <li><a class="dropdown-item" href="#">Calendario</a></li>
-                    <li><a class="dropdown-item" href="#">Paises</a></li>
+                    <li><a class="dropdown-item" href="{% url 'grupos' %}">Grupos</a></li>
+                    <li><a class="dropdown-item" href="{% url 'estadios' %}">Estadios</a></li>
+                    <li><a class="dropdown-item" href="{% url 'calendario' %}">Calendario</a></li>
+                    <li><a class="dropdown-item" href="{% url 'paises' %}">Paises</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Resultados</a></li>
+                    <li><a class="dropdown-item" href="{% url 'resultados' %}">Resultados</a></li>
                   </ul>
                 </li>
               
@@ -54,14 +54,14 @@
                 Comparte
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Invita a tus amigos!</a></li>
-                <li><a class="dropdown-item" href="#">Comparti en Redes Sociales</a></li>
+                <li><a class="dropdown-item" href="{% url 'invita' %}">Invita a tus amigos</a></li>
+                <li><a class="dropdown-item" href="{% url 'comparte' %}">Comparti en Redes Sociales</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Comentarios</a></li>
+                <li><a class="dropdown-item" href="{% url 'comenta' %}">Comenta</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"> Sobre Nosotros</a>
+              <a class="nav-link" href="{% url 'sobrenos' %}"> Sobre Nosotros</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -78,7 +78,8 @@
         <p> Informacion del perfil</p>
       </div>
       <div class="derecha">
-        <h1> Contenidos por pagina </h1>
+        {% block contenidoquecambia %}
+        {% endblock %}
       </div>
 
     </section>
