@@ -1,8 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
 def inicio(request):
-    return render(request,"AppInicio/padre.html")
+    return render(request,"AppInicio/inicio.html")
 
 def calendario(request):
     return render(request,"AppInicio/calendario.html")
