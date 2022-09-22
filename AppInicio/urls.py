@@ -17,5 +17,6 @@ urlpatterns= [
     path('paises/',views.paises, name= 'paises'),
     path('resultados/',views.resultados, name= 'resultados'),
     path('sobrenos/',views.sobrenos, name= 'sobrenos'),
+    path('iniciaSesion/',views.iniciaSesion, name= 'iniciaSesion'),
            
 ]
