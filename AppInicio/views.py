@@ -39,3 +39,6 @@ def resultados(request):
     
 def sobrenos(request):
     return render(request,"AppInicio/sobrenos.html")
+
+def iniciaSesion(request):
+    return render(request,"AppInicio/iniciaSesion.html")
