@@ -2,14 +2,27 @@ from django.db import models
 
 # Create your models here.
 class Pais(models.Model):
-    pais=models.CharField(max_length=60)
-
+    grupo=models.CharField(max_length=1)
+    instanciaplayoff=models.CharField(max_length=25)
+    jugadores=models.CharField(max_length=25)
 class Jugador(models.Model):
     nombre=models.CharField(max_length=60)
     apellido=models.CharField(max_length=60)
-    pais=models.CharField(max_length=50)
+    equipo=models.CharField(max_length=50)
     posicion=models.CharField(max_length=25)
 
 class Estadio(models.Model):
-    localizacion=models.Charfield(max_length=30)
+    localizacion=models.CharField(max_length=30)
+
+class FechaGrupos(models.Model):
+    equipolocal=models.CharField(max_length=25)
+    equipovisita=models.CharField(max_length=25)
+    fecha=models.DateField()
+    resultado=models.CharField(max_length=25)
+
+class FechaPlayOff(models.Model):
+    equipolocal=models.CharField(max_length=25)
+    equipovisita=models.CharField(max_length=25)
+    fecha=models.DateField()
+    resultado=models.CharField(max_length=25)
 
