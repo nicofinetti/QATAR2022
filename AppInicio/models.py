@@ -14,7 +14,7 @@ class Estadio(models.Model):
 class FechaGrupos(models.Model):
     equipolocal=models.CharField(max_length=25)
     equipovisita=models.CharField(max_length=25)
-    fecha=models.CharField(max_length=25)
+    fecha=models.DateTimeField()
     resultado=models.CharField(max_length=25)
 
 class FechaPlayOff(models.Model):
