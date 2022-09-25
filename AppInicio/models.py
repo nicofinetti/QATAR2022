@@ -9,14 +9,15 @@ class Jugador(models.Model):
     posicion=models.CharField(max_length=25)
 
 class Estadio(models.Model):
-    localizacion=models.CharField(max_length=30)
-
+    ubicacion=models.CharField(max_length=30)
+    nombre=models.CharField(max_length=30)
+    
 class FechaGrupos(models.Model):
     equipolocal=models.CharField(max_length=25)
     equipovisita=models.CharField(max_length=25)
     fecha=models.DateTimeField()
     resultado=models.CharField(max_length=25)
-
+    estadio=models.CharField(max_length=30)
 class FechaPlayOff(models.Model):
     equipolocal=models.CharField(max_length=25)
     equipovisita=models.CharField(max_length=25)
