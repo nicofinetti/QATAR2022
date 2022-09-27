@@ -50,10 +50,55 @@ body {
     background: rgb(236, 233, 224);  
     height: 100vh;
     width: 83%;
-    text-align: center;
+    padding-left:4rem;
+    text-align: left;
  }
  #pantalla-dividida{
 
     display: flex;
 
  }
+
+ #contenedor {
+    text-align: left;
+    width: 83%;
+    
+   }
+   
+   #lateral {
+    
+    background: rgb(236, 233, 224);    
+    float:right; 
+	width: 40%;
+    height: 100%;
+	
+   }
+        #listajugadores {
+            height: 50vh;
+            background: #ffffff;
+            overflow-y: scroll
+        }
+	
+
+   
+   
+   #principal {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background: rgb(236, 233, 224);  
+    
+   }
+   
+   .clearfix:after {
+     content: "";
+     display: table;
+     clear: both;
+   }
+
+footer {
+    background: #c01e4c; 
+    width: 100%;
+    text-align: center;
+    text-decoration: solid;
+    }

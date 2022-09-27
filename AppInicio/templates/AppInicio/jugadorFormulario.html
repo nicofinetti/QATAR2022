@@ -1,0 +1,42 @@
+{% extends "AppInicio/padre.html" %}
+{% load static %}
+{% block titulo_de_pagina %} 
+<h1 class="mb-5">Cargar JUGADOR</h1> 
+{% endblock %}
+
+{% block contenidoquecambia %}
+<div id="contenedor" class="clearfix">
+
+
+<div id="lateral">
+<p>LISTADO DE JUGADORES CARGADOS</p>
+    <div id="listajugadores">
+    <ol>
+        {% for j in jugadores %}
+            <li>{{j}}</li>
+        {% endfor %}
+    </ol>
+    </div>
+</div>
+    
+<div id="principal">
+    <p>Formulario para cargar JUGADORES</p>
+    <h4> {{ jugador }} {{ mensaje }}</h4>
+    <form action="" method="POST">{% csrf_token %}
+    
+    
+        <table>
+            {{formulario.as_table}}
+        </table>
+    
+        <hr class="dropdown-divider">
+        <input type="submit" , value="CARGAR">
+    
+    </form>      
+</div>
+    
+</div>
+
+
+
+{% endblock %}
