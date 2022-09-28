@@ -33,8 +33,8 @@ def estadios(request):
 def grupos(request):
     return render(request,"AppInicio/grupos.html")
 
-def invita(request):
-    return render(request,"AppInicio/invita.html")
+def mensajes(request):
+    return render(request,"AppInicio/mensajes.html")
 
 def miequipo(request):
     return render(request,"AppInicio/miequipo.html")
