@@ -1,0 +1,21 @@
+{% extends "AppInicio/padre.html" %}
+{% load static %}
+{% block titulo_de_pagina %} 
+<h1 class="mb-5">INGRESAR</h1> 
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+    <form action="" method="POST">
+        
+        
+        {% csrf_token %}
+
+
+        {{form.as_p}}
+
+        <button type="submit"> Iniciar sesión </button>
+    </form>
+
+    {% endblock %}
+

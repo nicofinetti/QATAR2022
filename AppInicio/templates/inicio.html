@@ -1,0 +1,42 @@
+{% extends "AppInicio/padre.html" %}
+{% load static %}
+{% load markdown_extras %}
+{% block titulo_de_pagina %} 
+ 
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Noticias del mundial QATAR 2022 </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <!-- Aca deberian ir los posteos -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in Post_list %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title"> {{ Post.titulo }} </h2>
+                    <p class="card-text text-muted h6"> {{ Post.autor }} | {{ Post.fecha_creado }} </p>
+                    <p class="card-text"> {{ Post.contenido| markdown |slice:":200" }} </p>
+                    <a href="{% url 'DetallePost' Post.slug  %}" class="btn btn-primary">Continuar leyendo &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+

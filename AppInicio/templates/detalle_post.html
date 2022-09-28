@@ -1,0 +1,33 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% load markdown_extras %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1>{% block title %} {{ post.titulo }} {% endblock title %}</h1>
+        <p class=" text-muted">{{ post.autor }} | {{ post.fecha_creado }}</p>
+        <p class="card-text ">{{ object.contenido | markdown | safe }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% for comentario in comentarios %}
+<div class="comments" style="padding: 10px;">
+  <p class="font-weight-bold">
+    {{ comentario.nombre }}
+    <span class=" text-muted font-weight-normal">
+      {{ comentario.fecha_creado }}
+    </span>
+  </p>
+  {{ comenatario.contenido | markdown | linebreaks }}
+</div>
+{% endfor %}
+
+<h1>FALTA TERMINAR EL HTML Y CSS DE ESTA PAGINA, NO MUESTRA LO QUE ES DEBIDO Y ESTA INCOMPLETA AUN.</h1>
+
+{% endblock content %}
+
