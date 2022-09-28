@@ -57,6 +57,7 @@ body {
     
     
     
+    
  }
  #pantalla-dividida{
 
@@ -107,4 +108,9 @@ footer {
     text-align: center;
     text-decoration: solid;
     }
+
+.inicio {
+
+    color: #9c2d4d;
+}
 
