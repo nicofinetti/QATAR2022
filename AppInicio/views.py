@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import  Jugador
@@ -9,10 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
-=======
 from django.shortcuts import render, redirect
-
->>>>>>> rodnicolas
 
 # Create your views here.
 def inicio(request):
@@ -57,7 +53,6 @@ def resultados(request):
 def sobrenos(request):
     return render(request,"AppInicio/sobrenos.html")
 
-<<<<<<< HEAD
 '''
 JUGADOR
 '''
@@ -160,9 +155,8 @@ def editarPerfil(request):
         miFormulario=UserEditForm(initial={"email":usuario.email})
         
     return render(request, "AppInicio/editarPerfil.html",{"miFormulario":miFormulario, "usuario":usuario})
-=======
+
 def iniciaSesion(request):
     return render(request,"AppInicio/iniciaSesion.html") 
 
 
->>>>>>> rodnicolas

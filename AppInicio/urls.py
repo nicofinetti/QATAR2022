@@ -19,18 +19,11 @@ urlpatterns= [
      path('jugadores/',views.jugadores, name= 'jugadores'),
     path('resultados/',views.resultados, name= 'resultados'),
     path('sobrenos/',views.sobrenos, name= 'sobrenos'),
-<<<<<<< HEAD
     path('jugadorFormulario/', views.jugadorFormulario, name='jugadorFormulario'),
-
     path('login',views.login_request,name='login'),
     path('register',views.register, name='Register'),
     path('logout',LogoutView.as_view(template_name="AppInicio/logout.html"),name='Logout'),
     path('editarPerfil',views.editarPerfil, name="EditarPerfil"),
-    
-
-=======
     path('iniciaSesion/',views.iniciaSesion, name= 'iniciaSesion'),
-    
->>>>>>> rodnicolas
-           
+               
 ]

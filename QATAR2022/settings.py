@@ -38,12 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppInicio',
-<<<<<<< HEAD
-    'ForoNews',
-=======
-    
-    
->>>>>>> rodnicolas
+    'ForoNews', 
 ]
 
 MIDDLEWARE = [
