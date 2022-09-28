@@ -1,7 +1,7 @@
 from django.db import models
 
 class Foro(models.Model):
-    usuario=models.CharField(max_length=200,default="anonimo")  #incorporar model de usuario registrado
+    usuario=models.CharField(max_length=200,default="Anonimo")  #incorporar model de usuario registrado
     email=models.CharField(max_length=200,null=True)            #incorporar mismo model de arriba
     tema= models.CharField(max_length=300)
     descripcion = models.CharField(max_length=1000,blank=True)
