@@ -15,4 +15,19 @@
   </div>
 </div>
 
+{% for comentario in comentarios %}
+<div class="comments" style="padding: 10px;">
+  <p class="font-weight-bold">
+    {{ comentario.nombre }}
+    <span class=" text-muted font-weight-normal">
+      {{ comentario.fecha_creado }}
+    </span>
+  </p>
+  {{ comenatario.contenido | markdown | linebreaks }}
+</div>
+{% endfor %}
+
+<h1>FALTA TERMINAR EL HTML Y CSS DE ESTA PAGINA, NO MUESTRA LO QUE ES DEBIDO Y ESTA INCOMPLETA AUN.</h1>
+
 {% endblock content %}
+

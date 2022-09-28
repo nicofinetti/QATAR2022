@@ -31,3 +31,17 @@ class Post(models.Model):
     def __str__(self):
         return self.titulo
 
+class Comentario(models.Model):
+    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
+    nombre = models.CharField(max_length=80)
+    email = models.EmailField()
+    contenido = models.TextField()
+    fecha_creado = models.DateTimeField(auto_now_add=True)
+    activo = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['fecha_creado']
+
+    def __str__(self):
+        return 'Comentario {} de {}'.format(self.contenido, self.nombre)
+
