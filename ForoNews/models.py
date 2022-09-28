@@ -15,6 +15,8 @@ class Post(models.Model):
     content = models.TextField()
     fecha_creado = models.DateTimeField(auto_now_add=True)
     estatus = models.IntegerField(choices=STATUS, default=0)
+    imagen = models.ImageField(upload_to='', null = True, blank = True)
+    #fecha_imagen = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-fecha_creado']
