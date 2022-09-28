@@ -12,46 +12,46 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 def inicio(request):
-    return render(request,"AppInicio/inicio.html")
+    return render(request,"../templates/AppInicio/inicio.html")
 
 def calendario(request):
-    return render(request,"AppInicio/calendario.html")
+    return render(request,"../templates/AppInicio/calendario.html")
 
 def comenta(request):
-    return render(request,"AppInicio/comenta.html")
+    return render(request,"../templates/AppInicio/comenta.html")
 
 def comparte(request):
-    return render(request,"AppInicio/comparte.html")
+    return render(request,"../templates/AppInicio/comparte.html")
 
 def estadios(request):
-    return render(request,"AppInicio/estadios.html")
+    return render(request,"../templates/AppInicio/estadios.html")
 
 def grupos(request):
-    return render(request,"AppInicio/grupos.html")
+    return render(request,"../templates/AppInicio/grupos.html")
 
 def mensajes(request):
-    return render(request,"AppInicio/mensajes.html")
+    return render(request,"../templates/AppInicio/mensajes.html")
 
 def miequipo(request):
-    return render(request,"AppInicio/miequipo.html")
+    return render(request,"../templates/AppInicio/miequipo.html")
 
 def mimundial(request):
-    return render(request,"AppInicio/mimundial.html")
+    return render(request,"../templates/AppInicio/mimundial.html")
 
 def mispredicciones(request):
-    return render(request,"AppInicio/mispredicciones.html")
+    return render(request,"../templates/AppInicio/mispredicciones.html")
 
 def paises(request):
-    return render(request,"AppInicio/paises.html")
+    return render(request,"../templates/AppInicio/paises.html")
 
 def jugadores(request):
-    return render(request,"AppInicio/jugadores.html")
+    return render(request,"../templates/AppInicio/jugadores.html")
 
 def resultados(request):
-    return render(request,"AppInicio/resultados.html")
+    return render(request,"../templates/AppInicio/resultados.html")
     
 def sobrenos(request):
-    return render(request,"AppInicio/sobrenos.html")
+    return render(request,"../templates/AppInicio/sobrenos.html")
 
 '''
 JUGADOR
@@ -72,14 +72,14 @@ def jugadorFormulario(request):
             posicion=info.get("posicion")
             jugador = Jugador(nombre=nombre, apellido=apellido, edad=edad, pais=pais, equipo=equipo, posicion=posicion)
             jugador.save()
-            return render(request,"AppInicio/jugadorFormulario.html",{"mensaje": "Jugador creado, puede crear otro","formulario":miFormulario,"jugador":jugador.apellido,"jugadores":jugadores})
+            return render(request,"../templates/AppInicio/jugadorFormulario.html",{"mensaje": "Jugador creado, puede crear otro","formulario":miFormulario,"jugador":jugador.apellido,"jugadores":jugadores})
         else:
-            return render(request,"AppInicio/jugadorFormulario.html",{"mensaje": "ERROR","formulario":miFormulario,"jugadores":jugadores})
+            return render(request,"../templates/AppInicio/jugadorFormulario.html",{"mensaje": "ERROR","formulario":miFormulario,"jugadores":jugadores})
 
     else:
         miFormulario=JugadorFormulario()
-        return render(request,"AppInicio/jugadorFormulario.html",{"formulario":miFormulario,"jugadores":jugadores})
-    return render(request,"AppInicio/jugadorFormulario.html",contexto)
+        return render(request,"../templates/AppInicio/jugadorFormulario.html",{"formulario":miFormulario,"jugadores":jugadores})
+    return render(request,"../templates/AppInicio/jugadorFormulario.html",contexto)
 
 
 
@@ -99,16 +99,16 @@ def login_request(request):
 
             if user is not None:
                 login(request, user)
-                return render(request,"AppInicio/inicio.html",{"mensaje":f"Bienvenido {usuario} "})
+                return render(request,"../templates/AppInicio/inicio.html",{"mensaje":f"Bienvenido {usuario} "})
             else:
-                return render (request,"AppInicio/inicio.html",{"mensaje":"Error, datos incorrectos"})
+                return render (request,"../templates/AppInicio/inicio.html",{"mensaje":"Error, datos incorrectos"})
         
         else:
-            return render(request,"AppInicio/inicio.html",{"mensaje":"Error, formulario erroneo"})
+            return render(request,"../templates/AppInicio/inicio.html",{"mensaje":"Error, formulario erroneo"})
     
     form=AuthenticationForm()
 
-    return render (request, "AppInicio/login.html", {'form':form})
+    return render (request, "../templates/AppInicio/login.html", {'form':form})
 
 '''
 REGISTER
@@ -120,14 +120,14 @@ def register(request):
             username=form.cleaned_data["username"]
             email=form.cleaned_data["email"]
             if User.objects.filter(email=email).exists():
-                return render(request, "AppInicio/registro.html", {"form":form, "mensaje":f"{email} ya está en uso"})
+                return render(request, "../templates/AppInicio/registro.html", {"form":form, "mensaje":f"{email} ya está en uso"})
             form.save()
-            return render(request, "AppInicio/inicio.html", {"mensaje":f"Usuario {username} creado!"})
+            return render(request, "../templates/AppInicio/inicio.html", {"mensaje":f"Usuario {username} creado!"})
         else:
-            return render(request, "AppInicio/registro.html", {"form":form, "mensaje":"Uno de los campos ya existe o es inválido"})
+            return render(request, "../templates/AppInicio/registro.html", {"form":form, "mensaje":"Uno de los campos ya existe o es inválido"})
     else:
         form=UserRegisterForm()
-    return render(request, "AppInicio/registro.html", {"form":form})
+    return render(request, "../templates/AppInicio/registro.html", {"form":form})
 
 
 
@@ -150,13 +150,13 @@ def editarPerfil(request):
             usuario.password2= informacion['password2']
             usuario.save()
 
-            return  render(request, "AppInicio/inicio.html")
+            return  render(request, "../templates/AppInicio/inicio.html")
     else:
         miFormulario=UserEditForm(initial={"email":usuario.email})
         
-    return render(request, "AppInicio/editarPerfil.html",{"miFormulario":miFormulario, "usuario":usuario})
+    return render(request, "../templates/AppInicio/editarPerfil.html",{"miFormulario":miFormulario, "usuario":usuario})
 
 def iniciaSesion(request):
-    return render(request,"AppInicio/iniciaSesion.html") 
+    return render(request,"../templates/AppInicio/iniciaSesion.html") 
 
 

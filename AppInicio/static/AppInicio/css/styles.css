@@ -50,14 +50,12 @@ body {
     padding-top: 2rem;
     background: rgb(236, 233, 224);  
     height: 100vh;
-<<<<<<< HEAD
     width: 83%;
     padding-left:4rem;
     text-align: left;
-=======
+
     width: 90%;
     text-align: center;
->>>>>>> rodnicolas
  }
  #pantalla-dividida{
 
@@ -65,7 +63,6 @@ body {
 
  }
 
-<<<<<<< HEAD
  #contenedor {
     text-align: left;
     width: 83%;
@@ -109,6 +106,7 @@ footer {
     text-align: center;
     text-decoration: solid;
     }
-=======
- 
->>>>>>> rodnicolas
+
+h3 {
+    color: #c01e4c ;
+}

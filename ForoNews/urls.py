@@ -1,5 +1,7 @@
-from django.contrib import admin
-from django.urls import path
 from . import views
-from .views import *
+from django.urls import path
 
+urlpatterns = [
+    path('', views.ListaPosts.as_view(), name='inicio'),
+    path('<slug:slug>/', views.DetallePost.as_view(), name='detalle_post'),
+]
